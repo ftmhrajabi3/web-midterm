@@ -11,6 +11,9 @@
     <div class="container">
       <div class="container userData backgroundEffect">
         <div class="dataSection">
+          <!--
+            this part is for showing the picture, name, blog and location data
+          -->
           <img id="userImage" src="images/gitLogo.png" alt="Git Logo" />
           <div class="infoPart">
             <p id="name">Name:</p>
@@ -18,10 +21,12 @@
             <p id="location">Location:</p>
           </div>
         </div>
+        <!--this part shows bio of the user-->
         <div id="bioSection">Bio:</div>
       </div>
 
       <form class="container searchPanel backgroundEffect">
+        <!--This form is for getting username-->
         <div>
           <input
             class="formElement"
@@ -31,7 +36,9 @@
             required=""
           />
         </div>
+        <!--This part shows the warning and results-->
         <p id="error">Warning:</p>
+        <!--This is the submit button-->
         <button class="formElement submitBttn" type="submit">Submit</button>
       </form>
     </div>

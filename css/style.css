@@ -1,3 +1,4 @@
+/*setting initial setting*/
 html {
   height: 100%;
   box-sizing: border-box;
@@ -13,6 +14,7 @@ body {
   background: linear-gradient(#141e30, #243b55);
 }
 
+/*setting of flex container*/
 .container {
   flex-direction: row;
   display: flex;
@@ -28,12 +30,14 @@ body {
   transform: translate(-50%, -50%);
 }
 
+/*background setting*/
 .backgroundEffect {
   background: rgba(0, 0, 0, 0.4);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
 
+/*changing the setting of informatin part*/
 .userData {
   position: absolute;
   flex-direction: column;
@@ -43,6 +47,7 @@ body {
   top: 50%;
 }
 
+/*Style of search panel*/
 .searchPanel {
   position: absolute;
   width: 23vw;
@@ -55,21 +60,21 @@ body {
   align-items: center;
 }
 
+/*the img, name, blog and location part*/
 .dataSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 43vw;
   height: 40vh;
-  /*background: rgba(100, 10, 10, 0.5);*/
   padding: 1%;
 }
 
+/*style of bio section*/
 #bioSection {
   width: 43vw;
   height: 20vh;
   padding: 1%;
-  /*background: rgba(10, 100, 10, 0.5);*/
 }
 
 .dataSection img {

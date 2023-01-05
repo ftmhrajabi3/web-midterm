@@ -7,6 +7,12 @@ const locationText = document.getElementById("location");
 const bioText = document.getElementById("bioSection");
 const errorArea = document.getElementById("error");
 
+/*This function works when user clicks on submit button
+first we try to search in the local storage.
+if the data exists we retrive it.
+else we check whether the username is valid and exists in git database
+else we show the data and also save it.
+*/
 async function getDataFromServer(e) {
     e.preventDefault();
     let retrivedObj = retriveData();
@@ -32,6 +38,8 @@ async function getDataFromServer(e) {
     }
 }
 
+/* for showing any kind of warning and result
+*/
 function showAlert(message, typeOfMessage) {
     errorArea.style.visibility = "visible";
     if (typeOfMessage == -1)
@@ -40,6 +48,7 @@ function showAlert(message, typeOfMessage) {
         errorArea.innerHTML = "Result: " + message;
 }
 
+/*Shows data in web page */
 function showData(jsonObj) {
     let imgSrc = jsonObj.avatar_url;
     if (imgSrc != null)
@@ -70,17 +79,20 @@ function showData(jsonObj) {
         bioText.innerHTML = "Bio: ";
 }
 
+/*Saves data in local storage */
 function saveData(jsonObj) {
     localStorage.setItem(usernameInput.value, JSON.stringify(jsonObj));
     console.log(JSON.stringify(jsonObj));
     showAlert("Data Saved", 0);
 }
 
+/*Searching local data base for the username */
 function retriveData() {
     let userData = localStorage.getItem(usernameInput.value);
     return JSON.parse(userData);
 }
 
+/*handling \n in bio part */
 function formatBio(bio) {
     return bio.replace("\r\n", "<br />");
 }
